@@ -24,3 +24,11 @@ podman run --rm -v "$PWD:/config:z" -w /config ghcr.io/ocp-on-nerc/snmp-config-g
 This will produce `snmp.yml` in the current directory.
 
 [snmp-exporter]: https://github.com/prometheus/snmp_exporter
+
+## Building the container image
+
+The `config-generator` directory contains the components of the container image.
+
+The `config-generator/mibs` directory contains the MIBs that are embedded in the image. The contents of this directory are built from a collection of upstream sources; the file `config-generator/miblist.txt` defines the sources of these MIBs.
+
+After modifying `miblist.txt`, run the `build-mibs-db.sh` script to refresh the `mibs` directory.
