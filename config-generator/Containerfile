@@ -1,37 +1,3 @@
-FROM quay.io/fedora/fedora:41 AS mibs
-
-RUN dnf -y install \
-  git-core \
-  curl \
-  wget \
-  net-snmp-libs
-
-WORKDIR /mibs
-
-# Get remote MIB collections
-RUN git clone https://github.com/Poil/MIBs.git poil
-RUN git clone https://github.com/kcsinclair/mibs.git kcsinclair
-RUN mkdir dell && curl -Ssf https://supportkb.dell.com/attachment/ka02R000000I7TFQA0/Current_MIBs_pkb_en_US_1.tar \
-  -o /tmp/dellmibs.tar && \
-  tar xvf /tmp/dellmibs.tar -C dell
-
-# Assemble a curated collection of MIBs that work with our configuration.
-RUN mkdir selected
-RUN curl -Ssf https://www.iana.org/assignments/ianaprinter-mib/ianaprinter-mib -o selected/ianaprinter-mib.my
-RUN curl -Ssf https://www.iana.org/assignments/ianacharset-mib/ianacharset-mib -o selected/ianacharset-mib.my
-RUN cp dell/* selected/
-RUN cp /usr/share/snmp/mibs/* selected/
-RUN for MIB in CISCO-ENHANCED-MEMPOOL-MIB.my CISCO-ENTITY-FRU-CONTROL-MIB.my \
-  CISCO-FC-FE-MIB.my CISCO-IF-EXTENSION-MIB.my CISCO-MEMORY-POOL-MIB.my CISCO-NS-MIB.my \
-  CISCO-PROCESS-MIB.my CISCO-QOS-PIB-MIB.my CISCO-SMI.my CISCO-ST-TC.my CISCO-TC.my \
-  CISCO-VSAN-MIB.my CISCO-ZS-MIB.my ENTITY-MIB.my; do \
-    cp kcsinclair/$MIB selected/; \
-  done
-RUN for MIB in dell/DELL-NETWORKING-CHASSIS-MIB dell/DELL-NETWORKING-FPSTATS-MIB \
-  dell/DELL-NETWORKING-SMI dell/DELL-NETWORKING-TC drac/IDRAC-MIB-SMIv2 PRINTER-MIB-V2.txt; do \
-    cp poil/$MIB selected/; \
-  done
-
 FROM quay.io/prometheus/snmp-generator:v0.28.0
 
-COPY --from=mibs /mibs/selected /mibs/
+COPY ./mibs /mibs/
