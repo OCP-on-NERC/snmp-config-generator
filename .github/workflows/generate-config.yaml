@@ -3,8 +3,8 @@ name: Generate snmp exporter configuration
 on:
   workflow_dispatch:
   push:
-    paths-ignore:
-    - 'config-generator/**'
+    paths:
+    - generator.yml
 
 env:
   # Use docker.io for Docker Hub if empty
