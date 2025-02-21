@@ -25,3 +25,7 @@ git_clone_or_update https://github.com/kcsinclair/mibs.git src/kcsinclair
 echo "Updating mibs directory"
 mkdir -p mibs
 xargs -IMIB cp MIB mibs/ < miblist.txt
+
+for patch in patches/*; do
+  patch -p2 < "$patch"
+done

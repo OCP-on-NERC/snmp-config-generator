@@ -1,0 +1,41 @@
+diff --git a/config-generator/mibs/CISCO-FC-FE-MIB.my b/config-generator/mibs/CISCO-FC-FE-MIB.my
+index 03e902b..07c2232 100644
+--- a/config-generator/mibs/CISCO-FC-FE-MIB.my
++++ b/config-generator/mibs/CISCO-FC-FE-MIB.my
+@@ -7049,10 +7049,10 @@ cffFcFeMIBComplianceRev17 MODULE-COMPLIANCE
+     DESCRIPTION
+         "Write access is not required."
+ 
+-    OBJECT          TransceiverPowerControl
+-    MIN-ACCESS      read-only
+-    DESCRIPTION
+-        "Write access is not required."
++--  OBJECT          TransceiverPowerControl
++--  MIN-ACCESS      read-only
++--  DESCRIPTION
++--      "Write access is not required."
+ 
+     ::= { cffFcFeMIBCompliances 19 }
+ 
+@@ -7651,7 +7651,7 @@ fcIfGroupRev6 OBJECT-GROUP
+         				fcIfTransceiverPower,
+         				fcIfTransceiverPowerControl,
+         				fcIfSysTransceiverPowerControlCapability,
+-        				fcIfSysTransceiverPowerControl,
++        				fcIfSysTransceiverPowerControl
+                     }
+     STATUS          current
+     DESCRIPTION
+diff --git a/config-generator/mibs/CISCO-ST-TC.my b/config-generator/mibs/CISCO-ST-TC.my
+index 0159b26..c58c8f3 100644
+--- a/config-generator/mibs/CISCO-ST-TC.my
++++ b/config-generator/mibs/CISCO-ST-TC.my
+@@ -362,7 +362,7 @@ FcIfSpeed ::= TEXTUAL-CONVENTION
+           thirtyTwoG  (12) - 32GBit.
+           autoMaxThirtyTwoG (13) - Negotiate to determine the
+                              speed automatically upto a
+-                             maximum of 32Gbit."
++                             maximum of 32Gbit.
+           fiftyG      (14) - 50GBit.
+           sixtyFourG  (15) - 64GBit.
+           autoMaxSixtyFourG (16) - Negotiate to determine the
