@@ -82,6 +82,7 @@ src/librenms/mibs/IANAifType-MIB
 src/librenms/mibs/IANA-PRINTER-MIB
 src/librenms/mibs/IF-MIB
 src/librenms/mibs/INET-ADDRESS-MIB
+src/librenms/mibs/IP-MIB
 src/librenms/mibs/P-BRIDGE-MIB
 src/librenms/mibs/POWER-ETHERNET-MIB
 src/librenms/mibs/Printer-MIB
