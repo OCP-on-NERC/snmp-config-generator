@@ -97,5 +97,7 @@ src/librenms/mibs/SNMPv2-SMI-v1
 src/librenms/mibs/SNMPv2-TC
 src/librenms/mibs/SNMPv2-TC-v1
 src/librenms/mibs/SNMPv2-TM
+src/librenms/mibs/TCP-MIB
 src/librenms/mibs/TOKEN-RING-RMON-MIB
+src/librenms/mibs/UDP-MIB
 src/librenms/mibs/UUID-TC-MIB
