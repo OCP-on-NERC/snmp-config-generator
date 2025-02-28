@@ -372,6 +372,14 @@ envMonFanState OBJECT-TYPE
                 Not Supported by Dell Modular Blade Server switches."
         ::= { envMonFanStatusEntry 3 }
 
+envMonFanSpeed OBJECT-TYPE
+        SYNTAX      INTEGER (1..2147483647)
+        MAX-ACCESS read-only
+
+        STATUS     current
+        DESCRIPTION
+                "Current speed in RPM of the fan"
+        ::= { envMonFanStatusEntry 4 }
 
 
 envMonSupplyStatusTable OBJECT-TYPE

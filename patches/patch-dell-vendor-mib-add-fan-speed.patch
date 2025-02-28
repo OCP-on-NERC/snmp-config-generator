@@ -1,0 +1,19 @@
+diff --git a/mibs/Dell-Vendor-MIB b/mibs/Dell-Vendor-MIB
+index fb5d805..7571adc 100644
+--- a/mibs/Dell-Vendor-MIB
++++ b/mibs/Dell-Vendor-MIB
+@@ -372,6 +372,14 @@ envMonFanState OBJECT-TYPE
+                 Not Supported by Dell Modular Blade Server switches."
+         ::= { envMonFanStatusEntry 3 }
+
++envMonFanSpeed OBJECT-TYPE
++        SYNTAX      INTEGER (1..2147483647)
++        MAX-ACCESS read-only
++
++        STATUS     current
++        DESCRIPTION
++                "Current speed in RPM of the fan"
++        ::= { envMonFanStatusEntry 4 }
+
+
+ envMonSupplyStatusTable OBJECT-TYPE
