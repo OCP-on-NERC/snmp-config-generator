@@ -1,5 +1,6 @@
 src/cisco/v2/CISCO-ENHANCED-MEMPOOL-MIB.my
 src/cisco/v2/CISCO-ENTITY-FRU-CONTROL-MIB.my
+src/cisco/v2/CISCO-ENTITY-SENSOR-MIB.my
 src/cisco/v2/CISCO-FC-FE-MIB.my
 src/cisco/v2/CISCO-IF-EXTENSION-MIB.my
 src/cisco/v2/CISCO-MEMORY-POOL-MIB.my
