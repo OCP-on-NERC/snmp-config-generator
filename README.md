@@ -1,9 +1,8 @@
 # NERC SNMP Exporter Configuration
 
-This repository contains:
+This repository contains a `Containerfile` that builds an image with the generator and all the required MIBs to build the [snmp-exporter] configuration in use at the NERC.
 
-1. A `generator.yml` for input into the [snmp-exporter] config generator.
-1. A `Containerfile` that builds an image with the generator and all the required MIBs.
+[snmp-exporter]: https://github.com/prometheus/snmp_exporter
 
 ## Generating the Configuration
 
