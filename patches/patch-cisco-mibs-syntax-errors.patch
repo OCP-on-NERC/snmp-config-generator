@@ -1,7 +1,7 @@
-diff --git a/config-generator/mibs/CISCO-FC-FE-MIB.my b/config-generator/mibs/CISCO-FC-FE-MIB.my
+diff --git a/mibs/CISCO-FC-FE-MIB.my b/mibs/CISCO-FC-FE-MIB.my
 index 03e902b..07c2232 100644
---- a/config-generator/mibs/CISCO-FC-FE-MIB.my
-+++ b/config-generator/mibs/CISCO-FC-FE-MIB.my
+--- a/mibs/CISCO-FC-FE-MIB.my
++++ b/mibs/CISCO-FC-FE-MIB.my
 @@ -7049,10 +7049,10 @@ cffFcFeMIBComplianceRev17 MODULE-COMPLIANCE
      DESCRIPTION
          "Write access is not required."
@@ -26,10 +26,10 @@ index 03e902b..07c2232 100644
                      }
      STATUS          current
      DESCRIPTION
-diff --git a/config-generator/mibs/CISCO-ST-TC.my b/config-generator/mibs/CISCO-ST-TC.my
+diff --git a/mibs/CISCO-ST-TC.my b/mibs/CISCO-ST-TC.my
 index 0159b26..c58c8f3 100644
---- a/config-generator/mibs/CISCO-ST-TC.my
-+++ b/config-generator/mibs/CISCO-ST-TC.my
+--- a/mibs/CISCO-ST-TC.my
++++ b/mibs/CISCO-ST-TC.my
 @@ -362,7 +362,7 @@ FcIfSpeed ::= TEXTUAL-CONVENTION
            thirtyTwoG  (12) - 32GBit.
            autoMaxThirtyTwoG (13) - Negotiate to determine the

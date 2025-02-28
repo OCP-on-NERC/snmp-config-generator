@@ -26,6 +26,6 @@ echo "Updating mibs directory"
 mkdir -p mibs
 xargs -IMIB cp MIB mibs/ < miblist.txt
 
-for patch in patches/*; do
-  patch -p2 < "$patch"
+for patch in patches/*.patch; do
+  patch -p1 < "$patch"
 done
