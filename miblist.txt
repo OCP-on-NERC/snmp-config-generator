@@ -12,6 +12,7 @@ src/cisco/v2/CISCO-ST-TC.my
 src/cisco/v2/CISCO-TC.my
 src/cisco/v2/CISCO-VSAN-MIB.my
 src/cisco/v2/CISCO-ZS-MIB.my
+src/cisco/v2/IPMCAST-MIB.my
 src/cisco/v2/RADIUS-AUTH-CLIENT-MIB.my
 src/kcsinclair/IPSEC-SPD-MIB.txt
 src/librenms/mibs/BRIDGE-MIB
@@ -140,3 +141,4 @@ src/librenms/mibs/UCD-SNMP-MIB
 src/librenms/mibs/UDP-MIB
 src/librenms/mibs/UUID-TC-MIB
 src/librenms/mibs/VRRP-MIB
+src/cisco/v2/LANGTAG-TC-MIB.my
