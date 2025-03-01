@@ -12,6 +12,8 @@ src/cisco/v2/CISCO-ST-TC.my
 src/cisco/v2/CISCO-TC.my
 src/cisco/v2/CISCO-VSAN-MIB.my
 src/cisco/v2/CISCO-ZS-MIB.my
+src/cisco/v2/RADIUS-AUTH-CLIENT-MIB.my
+src/kcsinclair/IPSEC-SPD-MIB.txt
 src/librenms/mibs/BRIDGE-MIB
 src/librenms/mibs/dell/BROADCOM-POWER-ETHERNET-MIB
 src/librenms/mibs/dell/BROADCOM-REF-MIB
@@ -74,6 +76,8 @@ src/librenms/mibs/dell/IDRAC-MIB-SMIv2
 src/librenms/mibs/dell/MIB-Dell-10892
 src/librenms/mibs/dell/SanAppliance-MIB
 src/librenms/mibs/dell/StorageManagement-MIB
+src/librenms/mibs/DIFFSERV-DSCP-TC
+src/librenms/mibs/DIFFSERV-MIB
 src/librenms/mibs/DISMAN-EVENT-MIB
 src/librenms/mibs/DISMAN-SCHEDULE-MIB
 src/librenms/mibs/ENTITY-MIB
@@ -88,6 +92,7 @@ src/librenms/mibs/IANA-PRINTER-MIB
 src/librenms/mibs/IANA-RTPROTO-MIB
 src/librenms/mibs/IF-MIB
 src/librenms/mibs/INET-ADDRESS-MIB
+src/librenms/mibs/INTEGRATED-SERVICES-MIB
 src/librenms/mibs/IP-FORWARD-MIB
 src/librenms/mibs/IP-MIB
 src/librenms/mibs/IPV6-ICMP-MIB
@@ -134,3 +139,4 @@ src/librenms/mibs/UCD-DLMOD-MIB
 src/librenms/mibs/UCD-SNMP-MIB
 src/librenms/mibs/UDP-MIB
 src/librenms/mibs/UUID-TC-MIB
+src/librenms/mibs/VRRP-MIB
