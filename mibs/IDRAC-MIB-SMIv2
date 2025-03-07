@@ -275,7 +275,7 @@ BooleanType             ::= TEXTUAL-CONVENTION
          Where 0 = FALSE, 1 = TRUE"
     SYNTAX              INTEGER (0..1)
 
--- DateName dates are defined in the displayable format
+-- DisplayString (SIZE (25)) dates are defined in the displayable format
 --   yyyymmddHHMMSS.uuuuuu+ooo
 -- where yyyy is the year, mm is the month number, dd is the day of the month,
 -- HHMMSS are the hours, minutes and seconds, respectively, uuuuuu is the
@@ -292,7 +292,7 @@ BooleanType             ::= TEXTUAL-CONVENTION
 DateName                ::= TEXTUAL-CONVENTION
     STATUS current
     DESCRIPTION
-        "String type for date strings of a given DateName format."
+        "String type for date strings of a given DisplayString (SIZE (25)) format."
     SYNTAX              OCTET STRING (SIZE (25))
 
 -- Note About Bit Fields:
@@ -510,7 +510,7 @@ racInfoObjGroup OBJECT-GROUP
     ::= { conformanceMIBGroups 1  }
 
 racName OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -518,7 +518,7 @@ racName OBJECT-TYPE
     ::= { racInfoGroup 1 }
 
 racShortName OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -527,7 +527,7 @@ racShortName OBJECT-TYPE
    ::= { racInfoGroup 2 }
 
 racDescription OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -536,7 +536,7 @@ racDescription OBJECT-TYPE
     ::= { racInfoGroup 3 }
 
 racManufacturer OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -545,7 +545,7 @@ racManufacturer OBJECT-TYPE
     ::= { racInfoGroup 4 }
 
 racVersion OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -553,7 +553,7 @@ racVersion OBJECT-TYPE
     ::= { racInfoGroup 5 }
 
 racURL OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -570,7 +570,7 @@ racType OBJECT-TYPE
     ::= { racInfoGroup 7 }
 
 racFirmwareVersion OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -592,7 +592,7 @@ chassisInfoObjGroup OBJECT-GROUP
     ::= { conformanceMIBGroups 2 }
 
 chassisServiceTag OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -601,7 +601,7 @@ chassisServiceTag OBJECT-TYPE
     ::= { chassisInfoGroup 1 }
 
 chassisNameModular OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -610,7 +610,7 @@ chassisNameModular OBJECT-TYPE
     ::= { chassisInfoGroup 2 }
 
 chassisModelModular OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -633,7 +633,7 @@ systemInfoObjGroup OBJECT-GROUP
         "A collection of objects providing information about the System group."
     ::= { conformanceMIBGroups 3 }
 systemFQDN OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -642,7 +642,7 @@ systemFQDN OBJECT-TYPE
     ::= { systemInfoGroup 1 }
 
 systemServiceTag OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -650,7 +650,7 @@ systemServiceTag OBJECT-TYPE
     ::= { systemInfoGroup 2 }
 
 systemExpressServiceCode OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -658,7 +658,7 @@ systemExpressServiceCode OBJECT-TYPE
     ::= { systemInfoGroup 3 }
 
 systemAssetTag OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -666,7 +666,7 @@ systemAssetTag OBJECT-TYPE
     ::= { systemInfoGroup 4 }
 
 systemBladeSlotNumber OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -675,7 +675,7 @@ systemBladeSlotNumber OBJECT-TYPE
     ::= { systemInfoGroup 5 }
 
 systemOSName OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -692,7 +692,7 @@ systemFormFactor OBJECT-TYPE
     ::= { systemInfoGroup 7 }
 
 systemDataCenterName OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -700,7 +700,7 @@ systemDataCenterName OBJECT-TYPE
     ::= { systemInfoGroup 8 }
 
 systemAisleName OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -708,7 +708,7 @@ systemAisleName OBJECT-TYPE
     ::= { systemInfoGroup 9 }
 
 systemRackName OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -716,7 +716,7 @@ systemRackName OBJECT-TYPE
     ::= { systemInfoGroup 10 }
 
 systemRackSlot OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -724,7 +724,7 @@ systemRackSlot OBJECT-TYPE
     ::= { systemInfoGroup 11 }
 
 systemModelName OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -740,7 +740,7 @@ systemSystemID OBJECT-TYPE
     ::= { systemInfoGroup 13 }
 
 systemOSVersion OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -749,7 +749,7 @@ systemOSVersion OBJECT-TYPE
     ::= { systemInfoGroup 14 }
 
 systemRoomName OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -777,7 +777,7 @@ systemBladeGeometry OBJECT-TYPE
     ::= { systemInfoGroup 17 }
 
 systemNodeID OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -786,7 +786,7 @@ systemNodeID OBJECT-TYPE
     ::= { systemInfoGroup 18 }
 
 systemOEMOSVersion OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS          read-only
     STATUS          current
     DESCRIPTION
@@ -885,7 +885,7 @@ alertMessageID OBJECT-TYPE
     ::= { alertVariablesGroup 1 }
 
 alertMessage OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -909,7 +909,7 @@ alertSystemServiceTag OBJECT-TYPE
     ::= { alertVariablesGroup 4 }
 
 alertSystemFQDN OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -933,7 +933,7 @@ alertDeviceDisplayName OBJECT-TYPE
     ::= { alertVariablesGroup 7 }
 
 alertMessageArguments OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -966,7 +966,7 @@ alertChassisName OBJECT-TYPE
     ::= { alertVariablesGroup 10 }
 
 alertRacFQDN OBJECT-TYPE
-    SYNTAX          StringType
+    SYNTAX          DisplayString
     MAX-ACCESS      read-only
     STATUS          current
     DESCRIPTION
@@ -2037,15 +2037,15 @@ ChassisInformationTableEntry                    ::= SEQUENCE {
     chassisStatus                               ObjectStatusEnum,
     chassisparentIndexReference                 ObjectRange,
     chassisType                                 ChassisTypeEnum,
-    chassisName                                 String64,
-    chassisManufacturerName                     String64,
-    chassisModelTypeName                        String64,
+    chassisName                                 DisplayString (SIZE (1..64)),
+    chassisManufacturerName                     DisplayString (SIZE (1..64)),
+    chassisModelTypeName                        DisplayString (SIZE (1..64)),
     chassisAssetTagName                         OCTET STRING,
     chassisServiceTagName                       OCTET STRING,
     chassisID                                   Unsigned8BitRange,
     chassisIDExtension                          Unsigned16BitRange,
     chassisSystemClass                          ChassisSystemClassEnum,
-    chassisSystemName                           String64,
+    chassisSystemName                           DisplayString (SIZE (1..64)),
     chassisLEDControlCapabilitiesUnique         LEDControlCapabilitiesFlags,
     chassisLEDControlSettingsUnique             LEDControlSettingsFlags,
     chassisIdentifyFlashControlCapabilities     ChassisIdentifyControlCapabilitiesFlags,
@@ -2063,8 +2063,8 @@ ChassisInformationTableEntry                    ::= SEQUENCE {
     chassisNMIButtonControlSettingsUnique       NMIButtonControlSettingsFlags,
     chassisSystemProperties                     SystemPropertiesFlags,
     chassisSystemRevisionNumber                 Unsigned8BitRange,
-    chassisSystemRevisionName                   String64,
-    chassisExpressServiceCodeName               String64
+    chassisSystemRevisionName                   DisplayString (SIZE (1..64)),
+    chassisExpressServiceCodeName               DisplayString (SIZE (1..64))
 }
 
 chassisInformationTable                         OBJECT-TYPE
@@ -2135,7 +2135,7 @@ chassisType                                     OBJECT-TYPE
     ::= { chassisInformationTableEntry 6 }
 
 chassisName                                     OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -2143,7 +2143,7 @@ chassisName                                     OBJECT-TYPE
     ::= { chassisInformationTableEntry 7 }
 
 chassisManufacturerName                         OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -2152,7 +2152,7 @@ chassisManufacturerName                         OBJECT-TYPE
     ::= { chassisInformationTableEntry 8 }
 
 chassisModelTypeName                            OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -2201,7 +2201,7 @@ chassisSystemClass                              OBJECT-TYPE
     ::= { chassisInformationTableEntry 14 }
 
 chassisSystemName                               OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -2361,7 +2361,7 @@ chassisSystemRevisionNumber                     OBJECT-TYPE
     ::= { chassisInformationTableEntry 47 }
 
 chassisSystemRevisionName                       OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -2370,7 +2370,7 @@ chassisSystemRevisionName                       OBJECT-TYPE
     ::= { chassisInformationTableEntry 48 }
 
 chassisExpressServiceCodeName                   OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -2406,7 +2406,7 @@ EventLogTableEntry                              ::= SEQUENCE {
     eventLogRecord                              OCTET STRING,
     eventLogFormat                              LogFormatType,
     eventLogSeverityStatus                      ObjectStatusEnum,
-    eventLogDateName                            DateName
+    eventLogDateName                            DisplayString (SIZE (25))
 }
 
 eventLogTable                                   OBJECT-TYPE
@@ -2489,7 +2489,7 @@ eventLogSeverityStatus                          OBJECT-TYPE
     ::= { eventLogTableEntry 7 }
 
 eventLogDateName                                OBJECT-TYPE
-    SYNTAX      DateName
+    SYNTAX      DisplayString (SIZE (25))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -2525,9 +2525,9 @@ SystemBIOSTableEntry                            ::= SEQUENCE {
     systemBIOSStateCapabilities                 StateCapabilitiesFlags,
     systemBIOSStateSettings                     StateSettingsFlags,
     systemBIOSStatus                            ObjectStatusEnum,
-    systemBIOSReleaseDateName                   DateName,
-    systemBIOSVersionName                       String64,
-    systemBIOSManufacturerName                  String64
+    systemBIOSReleaseDateName                   DisplayString (SIZE (25)),
+    systemBIOSVersionName                       DisplayString (SIZE (1..64)),
+    systemBIOSManufacturerName                  DisplayString (SIZE (1..64))
 }
 
 systemBIOSTable                                 OBJECT-TYPE
@@ -2593,7 +2593,7 @@ systemBIOSStatus                                OBJECT-TYPE
     ::= { systemBIOSTableEntry 5 }
 
 systemBIOSReleaseDateName                       OBJECT-TYPE
-    SYNTAX      DateName
+    SYNTAX      DisplayString (SIZE (25))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -2602,7 +2602,7 @@ systemBIOSReleaseDateName                       OBJECT-TYPE
     ::= { systemBIOSTableEntry 7 }
 
 systemBIOSVersionName                           OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -2611,7 +2611,7 @@ systemBIOSVersionName                           OBJECT-TYPE
     ::= { systemBIOSTableEntry 8 }
 
 systemBIOSManufacturerName                      OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -2665,9 +2665,9 @@ FirmwareTableEntry                              ::= SEQUENCE {
     firmwareStatus                              ObjectStatusEnum,
     firmwareSize                                Unsigned16BitRange,
     firmwareType                                FirmwareType,
-    firmwareTypeName                            String64,
+    firmwareTypeName                            DisplayString (SIZE (1..64)),
     firmwareUpdateCapabilities                  Unsigned16BitRange,
-    firmwareVersionName                         String64
+    firmwareVersionName                         DisplayString (SIZE (1..64))
 }
 
 firmwareTable                                   OBJECT-TYPE
@@ -2750,7 +2750,7 @@ firmwareType                                    OBJECT-TYPE
     ::= { firmwareTableEntry 7 }
 
 firmwareTypeName                                OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -2767,7 +2767,7 @@ firmwareUpdateCapabilities                      OBJECT-TYPE
     ::= { firmwareTableEntry 9 }
 
 firmwareVersionName                             OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -2825,7 +2825,7 @@ IntrusionTableEntry                             ::= SEQUENCE {
     intrusionStatus                             ObjectStatusEnum,
     intrusionReading                            IntrusionReadingEnum,
     intrusionType                               IntrusionTypeEnum,
-    intrusionLocationName                       String64
+    intrusionLocationName                       DisplayString (SIZE (1..64))
 }
 
 intrusionTable                                  OBJECT-TYPE
@@ -2910,7 +2910,7 @@ intrusionType                                   OBJECT-TYPE
     ::= { intrusionTableEntry 7 }
 
 intrusionLocationName                           OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -2964,7 +2964,7 @@ LcLogTableEntry                                 ::= SEQUENCE {
     lcLogSequenceNumber                         Unsigned32BitRange,
     lcLogCategory                               LcLogCategoryEnum,
     lcLogSeverityStatus                         ObjectStatusEnum,
-    lcLogDateName                               DateName,
+    lcLogDateName                               DisplayString (SIZE (25)),
     lcLogFQDD                                   FQDDString,
     lcLogMessageID                              OCTET STRING,
     lcLogMessage                                OCTET STRING,
@@ -3041,7 +3041,7 @@ lcLogSeverityStatus                             OBJECT-TYPE
     ::= { lcLogTableEntry 5 }
 
 lcLogDateName                                   OBJECT-TYPE
-    SYNTAX      DateName
+    SYNTAX      DisplayString (SIZE (25))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -3141,7 +3141,7 @@ PowerUnitTableEntry                             ::= SEQUENCE {
     powerUnitStateSettings                      StateSettingsFlags,
     powerUnitRedundancyStatus                   StatusRedundancyEnum,
     powerSupplyCountForRedundancy               ObjectRange,
-    powerUnitName                               String64,
+    powerUnitName                               DisplayString (SIZE (1..64)),
     powerUnitStatus                             ObjectStatusEnum
 }
 
@@ -3218,7 +3218,7 @@ powerSupplyCountForRedundancy                   OBJECT-TYPE
     ::= { powerUnitTableEntry 6 }
 
 powerUnitName                                   OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -3349,7 +3349,7 @@ PowerSupplyTableEntry                           ::= SEQUENCE {
     powerSupplyStatus                           ObjectStatusEnum,
     powerSupplyOutputWatts                      Signed32BitRange,
     powerSupplyType                             PowerSupplyTypeEnum,
-    powerSupplyLocationName                     String64,
+    powerSupplyLocationName                     DisplayString (SIZE (1..64)),
     powerSupplyMaximumInputVoltage              Signed32BitRange,
     powerSupplypowerUnitIndexReference          ObjectRange,
     powerSupplySensorState                      PowerSupplySensorStateFlags,
@@ -3440,7 +3440,7 @@ powerSupplyType                                 OBJECT-TYPE
     ::= { powerSupplyTableEntry 7 }
 
 powerSupplyLocationName                         OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -3596,7 +3596,7 @@ VoltageProbeTableEntry                          ::= SEQUENCE {
     voltageProbeStatus                          StatusProbeEnum,
     voltageProbeReading                         Signed32BitRange,
     voltageProbeType                            VoltageTypeEnum,
-    voltageProbeLocationName                    String64,
+    voltageProbeLocationName                    DisplayString (SIZE (1..64)),
     voltageProbeUpperNonRecoverableThreshold    Signed32BitRange,
     voltageProbeUpperCriticalThreshold          Signed32BitRange,
     voltageProbeUpperNonCriticalThreshold       Signed32BitRange,
@@ -3692,7 +3692,7 @@ voltageProbeType                                OBJECT-TYPE
     ::= { voltageProbeTableEntry 7 }
 
 voltageProbeLocationName                        OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -3856,7 +3856,7 @@ AmperageProbeTableEntry                         ::= SEQUENCE {
     amperageProbeStatus                         StatusProbeEnum,
     amperageProbeReading                        Signed32BitRange,
     amperageProbeType                           AmperageProbeTypeEnum,
-    amperageProbeLocationName                   String64,
+    amperageProbeLocationName                   DisplayString (SIZE (1..64)),
     amperageProbeUpperNonRecoverableThreshold   Signed32BitRange,
     amperageProbeUpperCriticalThreshold         Signed32BitRange,
     amperageProbeUpperNonCriticalThreshold      Signed32BitRange,
@@ -3965,7 +3965,7 @@ amperageProbeType                               OBJECT-TYPE
     ::= { amperageProbeTableEntry 7 }
 
 amperageProbeLocationName                       OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -4093,7 +4093,7 @@ SystemBatteryTableEntry                         ::= SEQUENCE {
     systemBatteryStateSettings                  StateSettingsFlags,
     systemBatteryStatus                         ObjectStatusEnum,
     systemBatteryReading                        SystemBatteryReadingFlags,
-    systemBatteryLocationName                   String64
+    systemBatteryLocationName                   DisplayString (SIZE (1..64))
 }
 
 systemBatteryTable                              OBJECT-TYPE
@@ -4164,7 +4164,7 @@ systemBatteryReading                            OBJECT-TYPE
     ::= { systemBatteryTableEntry 6 }
 
 systemBatteryLocationName                       OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -4233,15 +4233,15 @@ PowerUsageTableEntry                            ::= SEQUENCE {
     powerUsageStateCapabilities                 StateCapabilitiesFlags,
     powerUsageStateSettings                     StateSettingsFlags,
     powerUsageStatus                            ObjectStatusEnum,
-    powerUsageEntityName                        String64,
+    powerUsageEntityName                        DisplayString (SIZE (1..64)),
     powerUsageCumulativeWattage                 Unsigned32BitRange,
-    powerUsageCumulativeWattageStartDateName    DateName,
+    powerUsageCumulativeWattageStartDateName    DisplayString (SIZE (25)),
     powerUsagePeakWatts                         Unsigned32BitRange,
-    powerUsagePeakWattsStartDateName            DateName,
-    powerUsagePeakWattsReadingDateName          DateName,
+    powerUsagePeakWattsStartDateName            DisplayString (SIZE (25)),
+    powerUsagePeakWattsReadingDateName          DisplayString (SIZE (25)),
     powerUsagePeakAmps                          Unsigned32BitRange,
-    powerUsagePeakAmpsStartDateName             DateName,
-    powerUsagePeakAmpsReadingDateName           DateName,
+    powerUsagePeakAmpsStartDateName             DisplayString (SIZE (25)),
+    powerUsagePeakAmpsReadingDateName           DisplayString (SIZE (25)),
     powerUsageIdlePower                         Unsigned32BitRange,
     powerUsageMaxPotentialPower                 Unsigned32BitRange,
     powerUsagePowerCapCapabilities              PowerCapCapabilitiesFlags,
@@ -4315,7 +4315,7 @@ powerUsageStatus                                OBJECT-TYPE
     ::= { powerUsageTableEntry 5 }
 
 powerUsageEntityName                            OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -4334,7 +4334,7 @@ powerUsageCumulativeWattage                     OBJECT-TYPE
     ::= { powerUsageTableEntry 7 }
 
 powerUsageCumulativeWattageStartDateName        OBJECT-TYPE
-    SYNTAX      DateName
+    SYNTAX      DisplayString (SIZE (25))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -4354,7 +4354,7 @@ powerUsagePeakWatts                             OBJECT-TYPE
     ::= { powerUsageTableEntry 9 }
 
 powerUsagePeakWattsStartDateName                OBJECT-TYPE
-    SYNTAX      DateName
+    SYNTAX      DisplayString (SIZE (25))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -4364,7 +4364,7 @@ powerUsagePeakWattsStartDateName                OBJECT-TYPE
     ::= { powerUsageTableEntry 10 }
 
 powerUsagePeakWattsReadingDateName              OBJECT-TYPE
-    SYNTAX      DateName
+    SYNTAX      DisplayString (SIZE (25))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -4384,7 +4384,7 @@ powerUsagePeakAmps                              OBJECT-TYPE
     ::= { powerUsageTableEntry 12 }
 
 powerUsagePeakAmpsStartDateName                 OBJECT-TYPE
-    SYNTAX      DateName
+    SYNTAX      DisplayString (SIZE (25))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -4394,7 +4394,7 @@ powerUsagePeakAmpsStartDateName                 OBJECT-TYPE
     ::= { powerUsageTableEntry 13 }
 
 powerUsagePeakAmpsReadingDateName               OBJECT-TYPE
-    SYNTAX      DateName
+    SYNTAX      DisplayString (SIZE (25))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -4505,7 +4505,7 @@ CoolingUnitTableEntry                           ::= SEQUENCE {
     coolingUnitStateSettings                    StateSettingsFlags,
     coolingUnitRedundancyStatus                 StatusRedundancyEnum,
     coolingDeviceCountForRedundancy             ObjectRange,
-    coolingUnitName                             String64,
+    coolingUnitName                             DisplayString (SIZE (1..64)),
     coolingUnitStatus                           ObjectStatusEnum
 }
 
@@ -4582,7 +4582,7 @@ coolingDeviceCountForRedundancy                 OBJECT-TYPE
     ::= { coolingUnitTableEntry 6 }
 
 coolingUnitName                                 OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -4680,7 +4680,7 @@ CoolingDeviceTableEntry                         ::= SEQUENCE {
     coolingDeviceStatus                         StatusProbeEnum,
     coolingDeviceReading                        Signed32BitRange,
     coolingDeviceType                           CoolingDeviceTypeEnum,
-    coolingDeviceLocationName                   String64,
+    coolingDeviceLocationName                   DisplayString (SIZE (1..64)),
     coolingDeviceUpperNonRecoverableThreshold   Signed32BitRange,
     coolingDeviceUpperCriticalThreshold         Signed32BitRange,
     coolingDeviceUpperNonCriticalThreshold      Signed32BitRange,
@@ -4779,7 +4779,7 @@ coolingDeviceType                               OBJECT-TYPE
     ::= { coolingDeviceTableEntry 7 }
 
 coolingDeviceLocationName                       OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -4960,7 +4960,7 @@ TemperatureProbeTableEntry                      ::= SEQUENCE {
     temperatureProbeStatus                      StatusProbeEnum,
     temperatureProbeReading                     Signed32BitRange,
     temperatureProbeType                        TemperatureProbeTypeEnum,
-    temperatureProbeLocationName                String64,
+    temperatureProbeLocationName                DisplayString (SIZE (1..64)),
     temperatureProbeUpperNonRecoverableThreshold Signed32BitRange,
     temperatureProbeUpperCriticalThreshold      Signed32BitRange,
     temperatureProbeUpperNonCriticalThreshold   Signed32BitRange,
@@ -5057,7 +5057,7 @@ temperatureProbeType                            OBJECT-TYPE
     ::= { temperatureProbeTableEntry 7 }
 
 temperatureProbeLocationName                    OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -5408,21 +5408,21 @@ ProcessorDeviceTableEntry                       ::= SEQUENCE {
     processorDeviceStateSettings                StateSettingsFlags,
     processorDeviceStatus                       ObjectStatusEnum,
     processorDeviceType                         ProcessorDeviceType,
-    processorDeviceManufacturerName             String64,
+    processorDeviceManufacturerName             DisplayString (SIZE (1..64)),
     processorDeviceStatusState                  ProcessorDeviceStatusState,
     processorDeviceFamily                       ProcessorDeviceFamily,
     processorDeviceMaximumSpeed                 Unsigned32BitRange,
     processorDeviceCurrentSpeed                 Unsigned32BitRange,
     processorDeviceExternalClockSpeed           Unsigned32BitRange,
     processorDeviceVoltage                      Signed32BitRange,
-    processorDeviceVersionName                  String64,
+    processorDeviceVersionName                  DisplayString (SIZE (1..64)),
     processorDeviceCoreCount                    Unsigned32BitRange,
     processorDeviceCoreEnabledCount             Unsigned32BitRange,
     processorDeviceThreadCount                  Unsigned32BitRange,
     processorDeviceCharacteristics              Unsigned16BitRange,
     processorDeviceExtendedCapabilities         Unsigned16BitRange,
     processorDeviceExtendedSettings             Unsigned16BitRange,
-    processorDeviceBrandName                    String64,
+    processorDeviceBrandName                    DisplayString (SIZE (1..64)),
     processorDeviceFQDD                         FQDDString
 }
 
@@ -5498,7 +5498,7 @@ processorDeviceType                             OBJECT-TYPE
     ::= { processorDeviceTableEntry 7 }
 
 processorDeviceManufacturerName                 OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -5562,7 +5562,7 @@ processorDeviceVoltage                          OBJECT-TYPE
     ::= { processorDeviceTableEntry 14 }
 
 processorDeviceVersionName                      OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -5658,7 +5658,7 @@ processorDeviceExtendedSettings                 OBJECT-TYPE
     ::= { processorDeviceTableEntry 22 }
 
 processorDeviceBrandName                        OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -5719,7 +5719,7 @@ ProcessorDeviceStatusTableEntry                 ::= SEQUENCE {
     processorDeviceStatusStateSettings          StateSettingsFlags,
     processorDeviceStatusStatus                 ObjectStatusEnum,
     processorDeviceStatusReading                ProcessorDeviceStatusReadingFlags,
-    processorDeviceStatusLocationName           String64
+    processorDeviceStatusLocationName           DisplayString (SIZE (1..64))
 }
 
 processorDeviceStatusTable                      OBJECT-TYPE
@@ -5796,7 +5796,7 @@ processorDeviceStatusReading                    OBJECT-TYPE
     ::= { processorDeviceStatusTableEntry 6 }
 
 processorDeviceStatusLocationName               OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -5898,13 +5898,13 @@ MemoryDeviceTableEntry                          ::= SEQUENCE {
     memoryDeviceStateSettings                   StateSettingsFlags,
     memoryDeviceStatus                          ObjectStatusEnum,
     memoryDeviceType                            MemoryDeviceTypeEnum,
-    memoryDeviceLocationName                    String64,
-    memoryDeviceBankLocationName                String64,
+    memoryDeviceLocationName                    DisplayString (SIZE (1..64)),
+    memoryDeviceBankLocationName                DisplayString (SIZE (1..64)),
     memoryDeviceSize                            Unsigned32BitRange,
     memoryDeviceSpeed                           Unsigned32BitRange,
-    memoryDeviceManufacturerName                String64,
-    memoryDevicePartNumberName                  String64,
-    memoryDeviceSerialNumberName                String64,
+    memoryDeviceManufacturerName                DisplayString (SIZE (1..64)),
+    memoryDevicePartNumberName                  DisplayString (SIZE (1..64)),
+    memoryDeviceSerialNumberName                DisplayString (SIZE (1..64)),
     memoryDeviceFQDD                            FQDDString,
     memoryDeviceCurrentOperatingSpeed           Unsigned32BitRange,
     memoryDeviceTechnology                      MemoryTechnologyEnum,
@@ -5985,7 +5985,7 @@ memoryDeviceType                                OBJECT-TYPE
     ::= { memoryDeviceTableEntry 7 }
 
 memoryDeviceLocationName                        OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -5993,7 +5993,7 @@ memoryDeviceLocationName                        OBJECT-TYPE
     ::= { memoryDeviceTableEntry 8 }
 
 memoryDeviceBankLocationName                    OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -6021,7 +6021,7 @@ memoryDeviceSpeed                               OBJECT-TYPE
     ::= { memoryDeviceTableEntry 15 }
 
 memoryDeviceManufacturerName                    OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -6030,7 +6030,7 @@ memoryDeviceManufacturerName                    OBJECT-TYPE
     ::= { memoryDeviceTableEntry 21 }
 
 memoryDevicePartNumberName                      OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -6039,7 +6039,7 @@ memoryDevicePartNumberName                      OBJECT-TYPE
     ::= { memoryDeviceTableEntry 22 }
 
 memoryDeviceSerialNumberName                    OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -6135,8 +6135,8 @@ PCIDeviceTableEntry                             ::= SEQUENCE {
     pCIDeviceStateSettings                      StateSettingsFlags,
     pCIDeviceStatus                             ObjectStatusEnum,
     pCIDeviceDataBusWidth                       Unsigned32BitRange,
-    pCIDeviceManufacturerName                   String64,
-    pCIDeviceDescriptionName                    String64,
+    pCIDeviceManufacturerName                   DisplayString (SIZE (1..64)),
+    pCIDeviceDescriptionName                    DisplayString (SIZE (1..64)),
     pCIDeviceFQDD                               FQDDString
 }
 
@@ -6230,7 +6230,7 @@ pCIDeviceDataBusWidth                           OBJECT-TYPE
     ::= { pCIDeviceTableEntry 7 }
 
 pCIDeviceManufacturerName                       OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -6239,7 +6239,7 @@ pCIDeviceManufacturerName                       OBJECT-TYPE
     ::= { pCIDeviceTableEntry 8 }
 
 pCIDeviceDescriptionName                        OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -6348,8 +6348,8 @@ NetworkDeviceTableEntry                         ::= SEQUENCE {
     networkDeviceIndex                          ObjectRange,
     networkDeviceStatus                         ObjectStatusEnum,
     networkDeviceConnectionStatus               NetworkDeviceConnectionStatusEnum,
-    networkDeviceProductName                    String64,
-    networkDeviceVendorName                     String64,
+    networkDeviceProductName                    DisplayString (SIZE (1..64)),
+    networkDeviceVendorName                     DisplayString (SIZE (1..64)),
     networkDeviceCurrentMACAddress              MACAddress,
     networkDevicePermanentMACAddress            MACAddress,
     networkDevicePCIBusNumber                   Unsigned8BitRange,
@@ -6416,7 +6416,7 @@ networkDeviceConnectionStatus                   OBJECT-TYPE
     ::= { networkDeviceTableEntry 4 }
 
 networkDeviceProductName                        OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -6425,7 +6425,7 @@ networkDeviceProductName                        OBJECT-TYPE
     ::= { networkDeviceTableEntry 6 }
 
 networkDeviceVendorName                         OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION
@@ -6686,7 +6686,7 @@ SystemSlotTableEntry                            ::= SEQUENCE {
     systemSlotStatus                            ObjectStatusEnum,
     systemSlotCurrentUsage                      SystemSlotUsageEnum,
     systemSlotType                              SystemSlotTypeEnum,
-    systemSlotSlotExternalSlotName              String64,
+    systemSlotSlotExternalSlotName              DisplayString (SIZE (1..64)),
     systemSlotCategory                          SystemSlotCategoryEnum
 }
 
@@ -6770,7 +6770,7 @@ systemSlotType                                  OBJECT-TYPE
     ::= { systemSlotTableEntry 7 }
 
 systemSlotSlotExternalSlotName                  OBJECT-TYPE
-    SYNTAX      String64
+    SYNTAX      DisplayString (SIZE (1..64))
     MAX-ACCESS  read-only
     STATUS      current
     DESCRIPTION

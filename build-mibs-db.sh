@@ -29,3 +29,11 @@ xargs -IMIB cp MIB mibs/ < miblist.txt
 for patch in patches/*.patch; do
   patch -p1 < "$patch"
 done
+
+echo "Fixing weird Dell MIB string types"
+sed -i '
+s/ String64/ DisplayString (SIZE (1..64))/g
+s/ DateName/ DisplayString (SIZE (25))/g
+s/ StringType/ DisplayString/g
+' mibs/IDRAC-MIB-SMIv2
+
