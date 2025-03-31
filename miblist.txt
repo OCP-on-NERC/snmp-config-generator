@@ -142,3 +142,5 @@ src/librenms/mibs/UDP-MIB
 src/librenms/mibs/UUID-TC-MIB
 src/librenms/mibs/VRRP-MIB
 src/cisco/v2/LANGTAG-TC-MIB.my
+src/vertiv/geist_oneview.mib
+src/vertiv/geist_v5.mib
