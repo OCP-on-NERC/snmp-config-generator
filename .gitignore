@@ -1,2 +1,3 @@
 snmp.yml
-src/
+src/*
+!src/vertiv
